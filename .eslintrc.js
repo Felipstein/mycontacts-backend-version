@@ -13,5 +13,8 @@ module.exports = {
   rules: {
     'class-methods-use-this': 'off',
     'consistent-return': 'off',
+    'object-curly-newline': 'off',
+    'no-unused-vars': 'off',
+    camelcase: 'off',
   },
 };
