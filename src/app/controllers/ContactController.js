@@ -72,6 +72,8 @@ class ContactController {
     // Deletar um registro
     const { id } = request.params;
 
+    console.log('oii');
+
     await ContactsRepository.delete(id);
     // 204: No Content: Requisição deu certo, porém sem corpo.
     response.sendStatus(204);
