@@ -4,7 +4,7 @@ class CategoryController {
   async index(request, response) {
     const { orderBy } = request.query;
 
-    // const categories = await CategoriesRepository.findAll(orderBy);
+    const categories = await CategoriesRepository.findAll(orderBy);
 
     response.send(categories);
   }
