@@ -103,7 +103,9 @@ class ContactController {
     // Deletar um registro
     const { id } = request.params;
 
-    console.log('oii');
+    if (!isValidUUID(id)) {
+      return response.status(400).json({ error: 'Invalid contact id' });
+    }
 
     await ContactsRepository.delete(id);
     // 204: No Content: Requisição deu certo, porém sem corpo.
