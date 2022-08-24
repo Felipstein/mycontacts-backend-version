@@ -38,6 +38,10 @@ class ContactController {
       return response.status(400).json({ error: 'Name is required' });
     }
 
+    if (category_id && !isValidUUID(category_id)) {
+      return response.status(400).json({ error: 'Invalid category' });
+    }
+
     const contactsExists = await ContactsRepository.findByEmail(email);
 
     if (contactsExists) {
